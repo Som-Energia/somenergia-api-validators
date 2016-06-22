@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 from requests import Session
-import json
 import sys
 session = Session()
 try:
@@ -11,6 +10,6 @@ except:
   sys.exit(1)
 api = 'https://api.somenergia.coop/check/vat/'
 response = session.get(api+vat)
-responseJson = json.loads(response.text)
+responseJson= response.json()
 print "El DNI {} és {}".format(vat, 
-    "valid" if responseJson['state'] else "invalid")
+    "vàlid" if responseJson['state'] else "invàlid")
