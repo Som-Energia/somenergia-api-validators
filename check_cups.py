@@ -14,4 +14,4 @@ print u"El CUPS {} és {}".format(unicode(sys.argv[1]),
     u"invàlid, reason: {}".format(
         response['data']['invalid_fields'][0]['error']) 
     if not response['state'] else u"vàlid",
-    )
+    ).encode('utf-8')

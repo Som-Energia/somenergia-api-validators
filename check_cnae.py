@@ -14,4 +14,4 @@ except:
 print u"El CNAE {} és {}".format(unicode(sys.argv[1]), 
     u"vàlid i és per {}".format(
         response['data']['description']) if response['state'] else u"invàlid",
-    )
+    ).encode('utf-8')
