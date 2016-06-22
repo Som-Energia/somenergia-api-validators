@@ -15,3 +15,5 @@ print u"El CUPS {} és {}".format(sys.argv[1].decode('utf-8'),
         response['data']['invalid_fields'][0]['error']) 
     if not response['state'] else u"vàlid",
     ).encode('utf-8')
+if not response['state']:
+    sys.exit(3)   

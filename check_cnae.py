@@ -15,3 +15,5 @@ print u"El CNAE {} és {}".format(sys.argv[1].decode('utf-8'),
     u"vàlid i és per {}".format(
         response['data']['description']) if response['state'] else u"invàlid",
     ).encode('utf-8')
+if not response['state']:
+    sys.exit(3)

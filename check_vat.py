@@ -13,3 +13,5 @@ except:
     sys.exit(2)
 print u"El DNI {} és {}".format(sys.argv[1].decode('utf-8'),
     u"vàlid" if response['state'] else u"invàlid").encode('utf-8')
+if not response['state']:
+    sys.exit(3)    
