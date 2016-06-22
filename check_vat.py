@@ -11,5 +11,5 @@ except IndexError:
     sys.exit(1)
 except:
     sys.exit(2)
-print "El DNI {} és {}".format(unicode(sys.argv[1]),
-    "vàlid" if response['state'] else "invàlid").encode('utf-8')
+print u"El DNI {} és {}".format(sys.argv[1].decode('utf-8'),
+    u"vàlid" if response['state'] else u"invàlid").encode('utf-8')
