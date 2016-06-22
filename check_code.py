@@ -7,11 +7,11 @@ def check_code(url,code):
     try:
         response = session.get(API_BASE_URL+url+code)
         response.raise_for_status()
+        responseJson= response.json()
     except:
         print "Connection error"
         raise
-    responseJson= response.json()
     if responseJson['status'] != 'ONLINE':
         print 'ERP is not up'
         raise
-    return True if responseJson['state'] else False
+    return responseJson
